@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Image } from "@/components/ui/image";
 import { CONTACT, IMAGES } from "@/data/site";
 import { anchorClick } from "@/lib/scrollTo";
@@ -60,14 +61,12 @@ export default function Hero() {
             >
               Reserve a table
             </a>
-            <a
-              href={CONTACT.orderUrl}
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to="/order"
               className="inline-flex items-center gap-2 border-b border-foreground/25 pb-1 text-[11px] uppercase tracking-[0.22em] transition-colors hover:border-primary hover:text-primary"
             >
               Order online <ArrowUpRight className="h-3.5 w-3.5" />
-            </a>
+            </Link>
           </motion.div>
 
           <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-5 border-t border-foreground/10 pt-7 sm:grid-cols-4 lg:mt-20">
