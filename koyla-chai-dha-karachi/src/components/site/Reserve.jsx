@@ -103,18 +103,16 @@ export default function Reserve() {
   };
 
   return (
-    <section id="reserve" className="scroll-mt-16 border-t border-foreground/10 overflow-hidden">
-      <div className="mx-auto max-w-[1440px]">
-        <div className="grid lg:grid-cols-[0.95fr_1.05fr]">
-
-          {/* ── Left: info ── */}
-          <Reveal className="px-6 py-12 lg:px-14 lg:py-16">
+    <section id="reserve" className="scroll-mt-16 border-t border-foreground/10 pb-24 pt-16 lg:pb-36 lg:pt-20">
+      <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
+        <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-20">
+          <Reveal>
             <SectionHeading
               eyebrow="Reservations"
               title="Hold a table for tonight."
               intro="Tell us when you are coming and which part of Koyla Chai you would like to sit in. Walk-ins are always welcome, but weekends and rooftop seating fill up early."
             />
-            <div className="mt-10 space-y-6 border-t border-foreground/10 pt-8">
+            <div className="mt-12 space-y-6 border-t border-foreground/10 pt-8">
               <div>
                 <p className={labelClass}>Opening hours</p>
                 <p className="mt-2 text-sm text-foreground">{CONTACT.hours}</p>
@@ -141,9 +139,8 @@ export default function Reserve() {
             </div>
           </Reveal>
 
-          {/* ── Right: form ── */}
-          <Reveal delay={0.1} className="border-t border-foreground/10 lg:border-t-0 lg:border-l lg:border-foreground/10">
-            <div className="bg-card px-6 py-12 lg:px-14 lg:py-16 h-full">
+          <Reveal delay={0.1}>
+            <div className="border border-foreground/12 bg-card p-7 lg:p-10">
               {submitted ? (
                 <div className="flex h-full flex-col justify-center py-6">
                   <span className="ember-glow flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
