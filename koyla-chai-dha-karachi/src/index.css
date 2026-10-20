@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 43 37% 96%;
+    --foreground: 0 0% 7%;
+    --card: 43 44% 98%;
+    --card-foreground: 0 0% 7%;
+    --popover: 43 44% 98%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 17 77% 51%;
+    --primary-foreground: 43 44% 98%;
+    --secondary: 40 22% 91%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 40 20% 90%;
+    --muted-foreground: 25 9% 34%;
+    --accent: 26 91% 37%;
+    --accent-foreground: 43 44% 98%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 43 44% 98%;
+    --border: 30 14% 84%;
+    --input: 30 14% 84%;
+    --ring: 17 77% 51%;
+    --radius: 0.25rem;
+    --chart-1: 17 77% 51%;
+    --chart-2: 26 91% 37%;
+    --chart-3: 43 55% 58%;
+    --chart-4: 0 0% 20%;
+    --chart-5: 40 25% 72%;
+    --font-heading: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-body: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 43 37% 96%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 17 77% 51%;
+    --sidebar-primary-foreground: 43 44% 98%;
+    --sidebar-accent: 40 22% 91%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 30 14% 84%;
+    --sidebar-ring: 17 77% 51%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 43 37% 96%;
+    --card: 24 6% 12%;
+    --card-foreground: 43 37% 96%;
+    --popover: 24 6% 12%;
+    --popover-foreground: 43 37% 96%;
+    --primary: 17 77% 55%;
+    --primary-foreground: 0 0% 7%;
+    --secondary: 24 6% 16%;
+    --secondary-foreground: 43 37% 96%;
+    --muted: 24 6% 16%;
+    --muted-foreground: 40 12% 68%;
+    --accent: 26 91% 45%;
+    --accent-foreground: 43 37% 96%;
+    --destructive: 0 62% 42%;
+    --destructive-foreground: 43 37% 96%;
+    --border: 24 6% 20%;
+    --input: 24 6% 20%;
+    --ring: 17 77% 55%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.25);
+  }
+}
+
+@layer utilities {
+  .ember-glow {
+    box-shadow: 0 0 12px 2px rgba(226, 88, 34, 0.55);
+  }
+}
