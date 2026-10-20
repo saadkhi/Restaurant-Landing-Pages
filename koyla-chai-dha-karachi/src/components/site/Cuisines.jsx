@@ -6,7 +6,7 @@ import { CONTACT, CUISINES, IMAGES } from "@/data/site";
 
 export default function Cuisines() {
   return (
-    <section id="cuisines" className="scroll-mt-24 border-t border-foreground/10 py-24 lg:py-36">
+    <section id="cuisines" className="scroll-mt-16 border-t border-foreground/10 pb-24 pt-16 lg:pb-36 lg:pt-20">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">

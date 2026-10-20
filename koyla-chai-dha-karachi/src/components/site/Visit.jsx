@@ -9,7 +9,7 @@ const footerLink =
 
 export default function Visit() {
   return (
-    <footer id="visit" className="scroll-mt-24 bg-foreground pt-24 text-background lg:pt-36">
+    <footer id="visit" className="scroll-mt-16 bg-foreground pb-0 pt-16 text-background lg:pt-20">>
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <Reveal>
           <h2 className="max-w-4xl font-display text-5xl font-light leading-[0.98] tracking-[-0.03em] sm:text-6xl lg:text-[5vw]">

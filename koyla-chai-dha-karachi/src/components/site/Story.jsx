@@ -5,7 +5,7 @@ import { IMAGES, STATS } from "@/data/site";
 
 export default function Story() {
   return (
-    <section id="story" className="scroll-mt-24 py-24 lg:py-36">
+    <section id="story" className="scroll-mt-16 py-16 lg:pb-36 lg:pt-20">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
           <Reveal className="relative">

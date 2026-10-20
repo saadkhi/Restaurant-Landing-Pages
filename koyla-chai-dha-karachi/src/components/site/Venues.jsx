@@ -39,7 +39,7 @@ export default function Venues() {
   const rest = VENUES.filter((venue) => !venue.featured);
 
   return (
-    <section id="venues" className="scroll-mt-24 bg-foreground py-24 text-background lg:py-36">
+    <section id="venues" className="scroll-mt-16 bg-foreground pb-24 pt-16 text-background lg:pb-36 lg:pt-20">
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <SectionHeading
           light
