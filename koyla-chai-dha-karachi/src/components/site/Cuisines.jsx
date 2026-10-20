@@ -7,10 +7,12 @@ import { CONTACT, CUISINES, IMAGES } from "@/data/site";
 
 export default function Cuisines() {
   return (
-    <section id="cuisines" className="scroll-mt-16 border-t border-foreground/10 pb-24 pt-16 lg:pb-36 lg:pt-20">
-      <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
-        <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
-          <div className="lg:sticky lg:top-32 lg:self-start">
+    <section id="cuisines" className="scroll-mt-16 border-t border-foreground/10 overflow-hidden">
+      <div className="mx-auto max-w-[1440px]">
+        <div className="grid lg:grid-cols-[1fr_1.1fr]">
+
+          {/* ── Left: sticky image + heading ── */}
+          <div className="lg:sticky lg:top-16 lg:self-start">
             <Reveal>
               <div className="relative aspect-[3/2] overflow-hidden">
                 <Image
@@ -20,7 +22,7 @@ export default function Cuisines() {
                   fittingType="fill"
                 />
               </div>
-              <div className="mt-8">
+              <div className="px-6 py-10 lg:px-8 lg:py-12">
                 <SectionHeading
                   eyebrow="The Kitchens"
                   title="One roof. Seven cuisines."
@@ -30,7 +32,8 @@ export default function Cuisines() {
             </Reveal>
           </div>
 
-          <div>
+          {/* ── Right: cuisine list ── */}
+          <div className="border-t border-foreground/10 px-6 pb-16 pt-0 lg:border-t-0 lg:border-l lg:border-foreground/10 lg:px-14 lg:pb-20">
             <div className="border-t border-foreground/10">
               {CUISINES.map((cuisine, index) => (
                 <Reveal key={cuisine.name} delay={index * 0.04}>
@@ -68,6 +71,7 @@ export default function Cuisines() {
               </a>
             </div>
           </div>
+
         </div>
       </div>
     </section>
