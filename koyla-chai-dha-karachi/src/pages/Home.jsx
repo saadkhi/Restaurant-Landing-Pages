@@ -6,6 +6,7 @@ import Cuisines from "@/components/site/Cuisines";
 import Venues from "@/components/site/Venues";
 import Events from "@/components/site/Events";
 import Reserve from "@/components/site/Reserve";
+import SeoContent from "@/components/site/SeoContent";
 import Visit from "@/components/site/Visit";
 import { CONTACT } from "@/data/site";
 
@@ -20,6 +21,7 @@ export default function Home() {
         <Venues />
         <Events />
         <Reserve />
+        <SeoContent />
       </main>
       <Visit />
       <a

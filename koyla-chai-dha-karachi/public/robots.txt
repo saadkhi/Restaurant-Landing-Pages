@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://koylachai.com.pk/sitemap.xml
+
+# Block irrelevant paths
+Disallow: /404
