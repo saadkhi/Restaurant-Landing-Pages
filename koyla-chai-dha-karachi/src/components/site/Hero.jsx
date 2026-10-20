@@ -17,9 +17,9 @@ export default function Hero() {
   };
 
   return (
-    <section id="top" className="relative">
+    <section id="top" className="relative overflow-hidden">
       <div className="grid lg:min-h-[100svh] lg:grid-cols-[1.02fr_0.98fr]">
-        <div className="flex flex-col justify-center px-6 pb-16 pt-20 lg:px-12 lg:py-36">
+        <div className="flex flex-col justify-center px-6 pb-16 pt-24 lg:px-12 lg:py-36">
           <motion.p
             {...fade}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}

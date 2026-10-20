@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, Phone, X } from "lucide-react";
 import { CONTACT } from "@/data/site";
 import { scrollToSection } from "@/lib/scrollTo";
@@ -6,6 +7,7 @@ import { scrollToSection } from "@/lib/scrollTo";
 const LINKS = [
   { label: "Our Story", href: "#story" },
   { label: "Kitchens", href: "#cuisines" },
+  { label: "Menu", href: "/menu", isRoute: true },
   { label: "Venues", href: "#venues" },
   { label: "What's On", href: "#events" },
   { label: "Visit", href: "#visit" },
@@ -32,10 +34,8 @@ export default function Nav() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "border-b border-foreground/10 bg-background/85 backdrop-blur-md"
-            : ""
+        className={`fixed inset-x-0 top-0 z-50 bg-background/90 backdrop-blur-md transition-all duration-500 ${
+          scrolled ? "border-b border-foreground/10 shadow-sm" : ""
         }`}
       >
         <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-6 py-5 lg:px-12">
@@ -53,16 +53,26 @@ export default function Nav() {
           </a>
 
           <nav className="hidden items-center gap-9 lg:flex">
-            {LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground transition-colors hover:text-foreground"
-              >
-                {link.label}
-              </a>
-            ))}
+            {LINKS.map((link) =>
+              link.isRoute ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
           </nav>
 
           <div className="hidden items-center gap-6 lg:flex">
@@ -114,19 +124,33 @@ export default function Nav() {
             </button>
           </div>
           <nav className="flex flex-col px-6 pt-6">
-            {LINKS.map((link, index) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="border-b border-foreground/10 py-5 font-display text-3xl font-light tracking-tight"
-              >
-                <span className="mr-4 font-body text-[10px] tracking-[0.3em] text-primary">
-                  0{index + 1}
-                </span>
-                {link.label}
-              </a>
-            ))}
+            {LINKS.map((link, index) =>
+              link.isRoute ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  onClick={() => setOpen(false)}
+                  className="border-b border-foreground/10 py-5 font-display text-3xl font-light tracking-tight"
+                >
+                  <span className="mr-4 font-body text-[10px] tracking-[0.3em] text-primary">
+                    0{index + 1}
+                  </span>
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="border-b border-foreground/10 py-5 font-display text-3xl font-light tracking-tight"
+                >
+                  <span className="mr-4 font-body text-[10px] tracking-[0.3em] text-primary">
+                    0{index + 1}
+                  </span>
+                  {link.label}
+                </a>
+              )
+            )}
           </nav>
           <div className="px-6 pt-8">
             <a

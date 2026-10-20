@@ -75,7 +75,7 @@ export default function SeoContent() {
     <section
       id="faq"
       aria-label="Frequently asked questions about Koyla Chai Restaurant"
-      className="border-t border-foreground/10 py-16 lg:py-24"
+      className="border-t border-foreground/10 py-12 lg:py-16"
     >
       <div className="mx-auto max-w-[1440px] px-6 lg:px-12">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
