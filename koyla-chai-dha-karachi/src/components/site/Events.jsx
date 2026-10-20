@@ -2,6 +2,7 @@ import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import EmberRule from "./EmberRule";
 import { EVENTS } from "@/data/site";
+import { anchorClick } from "@/lib/scrollTo";
 
 export default function Events() {
   return (
@@ -33,6 +34,7 @@ export default function Events() {
         <Reveal delay={0.1} className="mt-14 flex flex-wrap items-center gap-x-8 gap-y-5">
           <a
             href="#reserve"
+            onClick={anchorClick}
             className="rounded-full bg-primary px-8 py-4 text-[11px] uppercase tracking-[0.22em] text-primary-foreground transition-all hover:-translate-y-0.5 hover:shadow-[0_16px_32px_-14px_rgba(226,88,34,0.9)]"
           >
             Reserve for a special night

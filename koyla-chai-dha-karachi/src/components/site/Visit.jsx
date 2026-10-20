@@ -2,6 +2,7 @@ import { Facebook, Instagram, MapPin, MessageCircle, Phone } from "lucide-react"
 import Reveal from "./Reveal";
 import EmberRule from "./EmberRule";
 import { CONTACT } from "@/data/site";
+import { anchorClick } from "@/lib/scrollTo";
 
 const footerLink =
   "text-[11px] uppercase tracking-[0.2em] text-background/60 transition-colors hover:text-primary";
@@ -85,12 +86,12 @@ export default function Visit() {
                 </a>
               </li>
               <li>
-                <a href="#reserve" className={footerLink}>
+                <a href="#reserve" onClick={anchorClick} className={footerLink}>
                   Reserve a table
                 </a>
               </li>
               <li>
-                <a href="#events" className={footerLink}>
+                <a href="#events" onClick={anchorClick} className={footerLink}>
                   What&apos;s on
                 </a>
               </li>
@@ -100,7 +101,7 @@ export default function Visit() {
 
         <div className="mt-20 flex flex-col gap-5 border-t border-background/12 py-8 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <span className="ember-glow h-1.5 w-1.5 rounded-full bg-primary" />
+            <img src="/logo.png" alt="Koyla Chai" className="h-10 w-10 rounded-full object-cover" />
             <span className="font-display text-xl">Koyla Chai</span>
           </div>
           <p className="text-[10px] uppercase tracking-[0.24em] text-background/45">

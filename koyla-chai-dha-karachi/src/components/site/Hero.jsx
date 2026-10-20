@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import { CONTACT, IMAGES } from "@/data/site";
+import { anchorClick } from "@/lib/scrollTo";
 
 const fade = {
   initial: { opacity: 0, y: 18 },
@@ -54,6 +55,7 @@ export default function Hero() {
           >
             <a
               href="#reserve"
+              onClick={anchorClick}
               className="inline-flex items-center rounded-full bg-primary px-8 py-4 text-[11px] uppercase tracking-[0.22em] text-primary-foreground transition-all hover:-translate-y-0.5 hover:shadow-[0_16px_32px_-14px_rgba(226,88,34,0.9)]"
             >
               Reserve a table

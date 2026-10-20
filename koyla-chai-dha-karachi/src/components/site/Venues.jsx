@@ -2,6 +2,7 @@ import { Image } from "@/components/ui/image";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
 import { VENUES } from "@/data/site";
+import { anchorClick } from "@/lib/scrollTo";
 
 function VenueCard({ venue, tall = false }) {
   return (
@@ -85,6 +86,7 @@ export default function Venues() {
         <Reveal delay={0.15} className="mt-14 flex flex-wrap items-center gap-x-8 gap-y-5">
           <a
             href="#reserve"
+            onClick={anchorClick}
             className="rounded-full bg-primary px-8 py-4 text-[11px] uppercase tracking-[0.22em] text-primary-foreground transition-all hover:-translate-y-0.5"
           >
             Book a room or a table

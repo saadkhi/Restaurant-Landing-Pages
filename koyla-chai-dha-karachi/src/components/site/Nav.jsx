@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, Phone, X } from "lucide-react";
 import { CONTACT } from "@/data/site";
+import { scrollToSection } from "@/lib/scrollTo";
 
 const LINKS = [
   { label: "Our Story", href: "#story" },
@@ -21,16 +22,33 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleNavClick = (e, href) => {
+    if (!href.startsWith("#")) return;
+    e.preventDefault();
+    setOpen(false);
+    scrollToSection(href);
+  };
+
   return (
     <>
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled ? "border-b border-foreground/10 bg-background/85 backdrop-blur-md" : "border-b border-transparent"
+          scrolled
+            ? "border-b border-foreground/10 bg-background/85 backdrop-blur-md"
+            : "border-b border-transparent"
         }`}
       >
         <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-6 px-6 py-5 lg:px-12">
-          <a href="#top" className="flex items-center gap-3">
-            <span className="ember-glow h-2 w-2 rounded-full bg-primary" />
+          <a
+            href="#top"
+            onClick={(e) => handleNavClick(e, "#top")}
+            className="flex items-center gap-2"
+          >
+            <img
+              src="/logo.png"
+              alt="Koyla Chai"
+              className="h-10 w-10 rounded-full object-cover"
+            />
             <span className="font-display text-2xl leading-none tracking-tight">Koyla Chai</span>
           </a>
 
@@ -39,6 +57,7 @@ export default function Nav() {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground transition-colors hover:text-foreground"
               >
                 {link.label}
@@ -56,6 +75,7 @@ export default function Nav() {
             </a>
             <a
               href="#reserve"
+              onClick={(e) => handleNavClick(e, "#reserve")}
               className="rounded-full bg-primary px-6 py-3 text-[11px] uppercase tracking-[0.2em] text-primary-foreground transition-all hover:-translate-y-0.5 hover:shadow-[0_14px_28px_-14px_rgba(226,88,34,0.9)]"
             >
               Reserve a table
@@ -76,7 +96,14 @@ export default function Nav() {
       {open ? (
         <div className="fixed inset-0 z-[60] bg-background lg:hidden">
           <div className="flex items-center justify-between px-6 py-5">
-            <span className="font-display text-2xl">Koyla Chai</span>
+            <div className="flex items-center gap-2">
+              <img
+                src="/logo.png"
+                alt="Koyla Chai"
+                className="h-10 w-10 rounded-full object-cover"
+              />
+              <span className="font-display text-2xl">Koyla Chai</span>
+            </div>
             <button
               type="button"
               onClick={() => setOpen(false)}
@@ -91,7 +118,7 @@ export default function Nav() {
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => handleNavClick(e, link.href)}
                 className="border-b border-foreground/10 py-5 font-display text-3xl font-light tracking-tight"
               >
                 <span className="mr-4 font-body text-[10px] tracking-[0.3em] text-primary">
@@ -104,7 +131,7 @@ export default function Nav() {
           <div className="px-6 pt-8">
             <a
               href="#reserve"
-              onClick={() => setOpen(false)}
+              onClick={(e) => handleNavClick(e, "#reserve")}
               className="block rounded-full bg-primary px-6 py-4 text-center text-[11px] uppercase tracking-[0.24em] text-primary-foreground"
             >
               Reserve a table
