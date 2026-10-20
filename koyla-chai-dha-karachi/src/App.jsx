@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
+import Menu from './pages/Menu';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Toaster />

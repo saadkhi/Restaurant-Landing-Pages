@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Image } from "@/components/ui/image";
 import Reveal from "./Reveal";
 import SectionHeading from "./SectionHeading";
@@ -51,17 +52,20 @@ export default function Cuisines() {
             </div>
 
             <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <Link
+                to="/menu"
+                className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-7 py-4 text-[11px] uppercase tracking-[0.22em] transition-colors hover:border-primary hover:text-primary"
+              >
+                See the full menu <ArrowUpRight className="h-3.5 w-3.5" />
+              </Link>
               <a
                 href={CONTACT.orderUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-foreground/20 px-7 py-4 text-[11px] uppercase tracking-[0.22em] transition-colors hover:border-primary hover:text-primary"
+                className="text-xs uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-primary"
               >
-                See the full menu <ArrowUpRight className="h-3.5 w-3.5" />
+                Delivery &amp; takeaway via our ordering site
               </a>
-              <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                Delivery & takeaway via our ordering site
-              </p>
             </div>
           </div>
         </div>
